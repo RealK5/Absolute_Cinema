@@ -1,4 +1,7 @@
 package cinema.domain;
 
-public class Bookable {
+public interface Bookable {
+    void book();
+    void cancel();
+    boolean isAvailable();
 }
