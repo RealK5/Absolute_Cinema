@@ -2,13 +2,16 @@ package cinema.domain;
 
 import cinema.util.Auditorium;
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Show
 {
     private final String movieTitle;
     private final Auditorium auditorium;
     private final LocalDateTime startTime;
-
+    private List<Seat> seats;
+    //konstruktorino
     public Show(String movieTitle, Auditorium auditorium, LocalDateTime startTime)
     {
         if (movieTitle == null || movieTitle.isBlank())
@@ -27,18 +30,27 @@ public class Show
         this.movieTitle = movieTitle;
         this.auditorium = auditorium;
         this.startTime = startTime;
+        this.seats = new ArrayList<>();
+    }
+    //Gettery i settery
+    public void setSeats(List<Seat> seats)
+    {
+        this.seats = seats;
+    }
+
+    public List<Seat> getSeats()
+    {
+        return seats;
     }
 
     public String getMovieTitle()
     {
         return movieTitle;
     }
-
     public Auditorium getAuditorium()
     {
         return auditorium;
     }
-
     public LocalDateTime getStartTime()
     {
         return startTime;
